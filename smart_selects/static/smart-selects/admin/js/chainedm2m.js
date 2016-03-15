@@ -29,6 +29,9 @@
             },
 
             fill_field: function(val, initial_value, elem_id, url, initial_parent, auto_choose){
+                if (!val) {
+                    return;
+                }
                 var target_url = url + "/" + val + "/";
                 $.getJSON(target_url, function(j){
                     var options = '';
